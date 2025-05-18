@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChapterIntent"
+        tools:targetApi="31" >
+        <activity
+            android:name=".demo2.NewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ChapterIntent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Demo1 Activity -->
+        <activity
+            android:name=".demo1.IntentDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".demo1.NewActivity"
+            android:exported="false" />
+
+        <!-- Demo2 Activity -->
+        <activity
+            android:name=".demo2.WebViewIntentDemoActivity"
+            android:exported="false" />
+
+        <!-- Demo3 Activity -->
+        <activity
+            android:name=".demo3.CommunicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".demo3.SubActivity"
+            android:exported="false" />
+
+        <!-- Demo4 Activity -->
+        <activity
+            android:name=".demo4.IntentResolutionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".demo4.NewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="schemodemo" android:host="edu.hrbeu" />
+            </intent-filter>
+        </activity>
+
+        <!-- Demo5 Activity and Receiver -->
+        <activity
+            android:name=".demo5.StaticBroadcastReceiverActivity"
+            android:exported="false" />
+        <receiver
+            android:name=".demo5.StaticBroadcastReceiver"
+            android:exported="false"
+            android:enabled="true">
+        </receiver>
+
+        <!-- Demo6 Activity and No Receiver -->
+        <activity
+            android:name=".demo6.DynamicBroadcastReceiverActivity"
+            android:label="DynamicBroadcastReceiverActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
