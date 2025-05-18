@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChapterService"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChapterService">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--   demo1:  Simple Random Service -->
+        <activity
+            android:name=".demo1.SimpleRandomServiceActivity"
+            android:exported="false" />
+        <service
+            android:name=".demo1.RandomService"
+            android:exported="false" />
+
+        <!-- demo2: Simple Math Service -->
+        <activity
+            android:name=".demo2.SimpleMathServiceActivity"
+            android:exported="false" />
+
+        <service android:name=".demo2.MathService" />
+
+        <!-- demo3: Simple Math Service -->
+        <activity
+            android:name=".demo3.LongTaskServiceActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".demo3.LongTaskService"
+            android:exported="false" />
+
+        <!-- demo4: Remote Math Service -->
+        <activity
+            android:name=".demo4.RemoteMathServiceActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".RemoteMathService"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="edu.hrbeu.chapterservice.REMOTE_MATH" />
+            </intent-filter>
+        </service>
+
+        <!-- demo5: Remote Math Service -->
+        <activity
+            android:name=".demo5.RemoteMathCallerActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
